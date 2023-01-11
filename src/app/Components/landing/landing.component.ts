@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../../Services/data.service";
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataSvc:DataService) { }
 
   ngOnInit(): void {
+    this.dataSvc.getAllUsuarios().subscribe(data=>console.log('usuario',data))
   }
 
 }

@@ -1,0 +1,12 @@
+.argP {
+    width: 100px;
+    height: 60px;
+}
+
+.social {
+    color:aliceblue;
+}
+
+.social:hover {
+    color:orange
+}
