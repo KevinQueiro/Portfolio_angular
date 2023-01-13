@@ -1,1 +1,22 @@
-<p>skills works!</p>
+<div class="skills">
+  <h1 class="text-center">SKILLS</h1>
+  <div class="row container justify-content-center">
+    <div *ngFor="let user of usuario" class="row justify-content-center">
+      <div *ngFor="let skill of user.skills" class="col-6 mt-4 algo">
+        <h6>{{skill.nombre}}</h6>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            [ngStyle]="{ width: skill.percen }"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            {{ skill.percen }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

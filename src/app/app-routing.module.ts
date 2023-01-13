@@ -7,10 +7,12 @@ import { StartComponent } from './Components/start/start.component'
 import { EducationComponent } from './Components/education/education.component'
 import { SkillsComponent } from './Components/skills/skills.component'
 import { ProyectsComponent } from './Components/proyects/proyects.component'
+import { ExperienceComponent } from './Components/experience/experience.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/Welcome', pathMatch: 'full'},
   {path: 'Welcome', component:LandingComponent},
+  {path:'Exp',component:ExperienceComponent},
   {path: 'Login', component:LoginComponent},
   {path: 'Start', component:StartComponent},
   {path: 'Education', component:EducationComponent},

@@ -1,9 +1,15 @@
+.btn-primary{
+  background-color: rgb(145, 58, 0);
+  border-color: rgb(255, 102, 0);
+}
+
+
 .main {
     color: aliceblue;
 }
 
 .card {
-    background-color: darkgray;
+    background-color: rgb(136, 128, 128);
 }
 
 h1, h2, hr
@@ -11,7 +17,7 @@ h1, h2, hr
   transition: 1s;
 }
 
-h1:hover, h2:hover, hr:hover
+h1:hover, h2:hover, hr:hover, .btn-primary:hover
 {
   color: rgb(255, 102, 0);
   text-shadow: 0 0 10px rgb(255, 102, 0),

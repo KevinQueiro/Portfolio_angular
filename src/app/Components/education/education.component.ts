@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioI } from 'src/app/models/usuarios.interface';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-education',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
-  constructor() { }
+  usuario!: UsuarioI[];
 
-  ngOnInit(): void {
+  constructor(private dataSvc:DataService) { }
+
+  ngOnInit(){
+    this.dataSvc.getAllUsuarios().subscribe((data) => (this.usuario = data))
   }
 
 }
