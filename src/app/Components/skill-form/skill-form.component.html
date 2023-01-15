@@ -1,0 +1,46 @@
+<div class="form-body">
+  <div class="form-holder">
+    <div class="form-content">
+      <div class="form-items">
+        <div *ngIf="actualUrl.includes('add')">
+          <h3>Agregar Skill</h3>
+        </div>
+        <div *ngIf="actualUrl.includes('change')">
+          <h3>Modificar Skill</h3>
+        </div>
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+          <div class="col-md-12">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="nombre"
+              placeholder="{{skill.nombre}}"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="percen"
+              placeholder="{{skill.percen}}"
+              required
+            />
+          </div>
+          <div class="form-button mt-3">
+            <div *ngIf="actualUrl.includes('add')">
+              <button id="submit" type="submit" class="btn btn-primary">
+                Guardar
+              </button>
+            </div>
+            <div *ngIf="actualUrl.includes('change')">
+              <button id="submit" type="submit" class="btn btn-primary">
+                Modificar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

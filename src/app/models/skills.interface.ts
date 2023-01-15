@@ -1,5 +1,5 @@
 export interface SkillsI {
-  id: number;
+  id?: number;
   nombre: String;
   percen: String;
 }

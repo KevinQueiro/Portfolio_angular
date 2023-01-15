@@ -1,14 +1,27 @@
-  <nav class="w-100 h-30 bg-secondary pe-3">
-    <div class="d-flex align-items-center justify-content-between">
-      <div>
-        <img src="../../../assets/Img/APLogo-20-20.png" alt="" class="argP">
+<nav class="w-100 h-30 bg-secondary pe-3">
+  <div class="d-flex align-items-center justify-content-between">
+    <div>
+      <img src="../../../assets/Img/APLogo-20-20.png" alt="" class="argP" />
+    </div>
+    <div class="d-flex">
+      <i class="pe-5 bi bi-linkedin social"></i>
+      <i class="pe-5 bi bi-github social"></i>
+      <div *ngIf="sesion">
+        <i
+        (click)="closeSesion()"
+          class="bi bi-box-arrow-left pe-5 social"
+        ></i>
       </div>
-      <div>
-        <i class="pe-5 bi bi-linkedin social"></i>
-        <i class="pe-5 bi bi-github social"></i>
-        <i class="pe-5 bi bi-box-arrow-right social" id="name" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i>
+      <div *ngIf="!sesion">
+        <i
+          class="bi bi-box-arrow-right pe-5 social"
+          id="name"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        ></i>
       </div>
     </div>
-  </nav>
-  <img class="img-fluid" src="../../../assets/Img/bannner.jpg" alt="">
-  <app-login></app-login>
+  </div>
+</nav>
+<img class="img-fluid" src="../../../assets/Img/bannner.jpg" alt="" />
+<app-login></app-login>

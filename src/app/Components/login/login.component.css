@@ -1,0 +1,32 @@
+.btn{
+    background-color: rgb(119, 119, 119);
+    border-color: rgb(255, 102, 0);
+}
+
+.ok{
+    color: rgb(51, 255, 0);
+}
+
+.close{
+    color: rgb(255, 43, 43);
+}
+
+.ok:hover{
+    color: rgb(51, 255, 0);
+  text-shadow: 0 0 10px rgb(51, 255, 0),
+               0 0 20px rgb(51, 255, 0),
+               0 0 40px rgb(51, 255, 0),
+               0 0 80px rgb(51, 255, 0);
+}
+
+.close:hover{
+    color: rgb(255, 43, 43);
+  text-shadow: 0 0 10px rgb(255, 43, 43),
+               0 0 20px rgb(255, 43, 43),
+               0 0 40px rgb(255, 43, 43),
+               0 0 80px rgb(255, 43, 43);
+}
+
+label{
+    color: rgb(0, 0, 0);
+}

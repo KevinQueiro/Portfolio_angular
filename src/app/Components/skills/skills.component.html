@@ -3,7 +3,11 @@
   <div class="row container justify-content-center">
     <div *ngFor="let user of usuario" class="row justify-content-center">
       <div *ngFor="let skill of user.skills" class="col-6 mt-4 algo">
-        <h6>{{skill.nombre}}</h6>
+        <div *ngIf="sesion" class="text-end">
+          <i class="bi bi-pencil-square" routerLink="change/{{ skill.id }}"></i>
+          <i class="bi bi-x-octagon ms-3" (click)="onDelete(skill.id)"></i>
+        </div>
+        <h6>{{ skill.nombre }}</h6>
         <div class="progress">
           <div
             class="progress-bar"
@@ -17,6 +21,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div *ngIf="sesion" class="text-center pt-5 pb-5">
+      <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
     </div>
   </div>
 </div>

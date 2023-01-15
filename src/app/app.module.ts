@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './Components/landing/landing.component';
@@ -14,7 +14,8 @@ import { StartComponent } from './Components/start/start.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule, ReactiveFormsModule } from "@Angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SkillFormComponent } from './Components/skill-form/skill-form.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +29,16 @@ import { FormsModule, ReactiveFormsModule } from "@Angular/forms";
     EducationComponent,
     StartComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SkillFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
