@@ -42,5 +42,4 @@ export class LoginComponent {
     sessionStorage.setItem('sesion','true');
     this.router.navigate([]).then(()=>window.location.reload())
   }
-
 }
