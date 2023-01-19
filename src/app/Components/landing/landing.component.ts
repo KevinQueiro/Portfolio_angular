@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../../Services/data.service";
+import { DataService } from "../../Services/logIn.service";
 
 @Component({
   selector: 'app-landing',

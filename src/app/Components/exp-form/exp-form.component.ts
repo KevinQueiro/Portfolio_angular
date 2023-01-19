@@ -3,7 +3,8 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExperienciasI } from 'src/app/models/experiencias.interface';
 import { TecnologiaI } from 'src/app/models/tecnologias.interface';
-import { DataService } from 'src/app/Services/data.service';
+import { ExpService } from 'src/app/Services/exp.service';
+import { DataService } from 'src/app/Services/logIn.service';
 
 @Component({
   selector: 'app-exp-form',
@@ -33,6 +34,7 @@ export class ExpFormComponent implements OnInit {
 
   constructor(
     private dataSvc: DataService,
+    private expSvc: ExpService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute
@@ -49,7 +51,7 @@ export class ExpFormComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => (this.idExp = params.get('expId'))
     );
-    this.dataSvc
+    this.expSvc
     .getExpById(this.idExp)
     .subscribe((data) => (this.exp = data));
   }
@@ -66,7 +68,7 @@ export class ExpFormComponent implements OnInit {
       fechaIni: this.checkoutForm.value.fechaIni || '',
       fechaFin: this.checkoutForm.value.fechaFin || ''
     }
-    this.dataSvc.newExp(newExp, this.idUser).subscribe((data) =>{
+    this.expSvc.newExp(newExp, this.idUser).subscribe((data) =>{
       this.router.navigate(['/Exp'])
     })
   }
@@ -79,7 +81,7 @@ export class ExpFormComponent implements OnInit {
       fechaIni: this.checkoutForm.value.fechaIni || this.exp.fechaIni,
       fechaFin: this.checkoutForm.value.fechaFin || this.exp.fechaFin
     };
-    this.dataSvc.changeExp(this.idExp,newExp).subscribe((data) => {
+    this.expSvc.changeExp(this.idExp,newExp).subscribe((data) => {
       this.router.navigate(['/Exp']);
     });
   }
@@ -97,7 +99,7 @@ export class ExpFormComponent implements OnInit {
       fechaFin: this.checkoutForm.value.fechaFin || this.exp.fechaFin
     }
     console.log("datos",newExp);
-  this.dataSvc.addTecno(this.exp.id,false,idTecno,newExp)
+  this.expSvc.addTecnoToExp(this.exp.id,false,idTecno,newExp)
   .subscribe((data)=> null)
   this.router.navigate([`/Exp/change/${this.idExp}`]).then(() => window.location.reload())
   }
@@ -110,7 +112,7 @@ export class ExpFormComponent implements OnInit {
       fechaIni: this.checkoutForm.value.fechaIni || this.exp.fechaIni,
       fechaFin: this.checkoutForm.value.fechaFin || this.exp.fechaFin
     }
-    this.dataSvc.addTecno(this.exp.id,true,idTecno,newExp)
+    this.expSvc.addTecnoToExp(this.exp.id,true,idTecno,newExp)
   .subscribe((data)=> null)
   this.router.navigate([`/Exp/change/${this.idExp}`]).then(() => window.location.reload())
   }

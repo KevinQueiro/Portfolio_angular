@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SkillsI } from 'src/app/models/skills.interface';
-import { DataService } from 'src/app/Services/data.service';
+import { DataService } from 'src/app/Services/logIn.service';
 import { FormBuilder } from '@angular/forms';
+import { SkillService } from 'src/app/Services/skill.service';
 
 @Component({
   selector: 'app-skill-form',
@@ -19,7 +20,7 @@ export class SkillFormComponent implements OnInit {
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private dataSvc: DataService,
+    private skillSvc: SkillService,
     private route: ActivatedRoute
   ) {
     this.router = router;
@@ -35,7 +36,7 @@ export class SkillFormComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => (this.idSkill = params.get('skillId'))
     );
-    this.dataSvc
+    this.skillSvc
       .getSkillById(this.idSkill)
       .subscribe((data) => (this.skill = data));
   }
@@ -50,7 +51,7 @@ export class SkillFormComponent implements OnInit {
       nombre: this.checkoutForm.value.nombre || '',
       percen: `${this.checkoutForm.value.percen}%` || '',
     };
-    this.dataSvc.newSkill(newSkill, this.idUser).subscribe((data) => {
+    this.skillSvc.newSkill(newSkill, this.idUser).subscribe((data) => {
       this.router.navigate(['/Skills']);
     });
   }
@@ -62,7 +63,7 @@ export class SkillFormComponent implements OnInit {
       nombre: this.checkoutForm.value.nombre || this.skill.nombre,
       percen: this.checkoutForm.value.percen || this.skill.percen,
     };
-    this.dataSvc.changeSkill(newSkill, this.idSkill).subscribe((data) => {
+    this.skillSvc.changeSkill(newSkill, this.idSkill).subscribe((data) => {
       this.router.navigate(['/Skills']);
     });
   }

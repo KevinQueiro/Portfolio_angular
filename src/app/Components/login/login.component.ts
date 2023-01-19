@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
-import { DataService } from 'src/app/Services/data.service';
+import { DataService } from 'src/app/Services/logIn.service';
 
 @Component({
   selector: 'app-login',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioI } from 'src/app/models/usuarios.interface';
-import { DataService } from 'src/app/Services/data.service';
+import { DataService } from 'src/app/Services/logIn.service';
 
 @Component({
   selector: 'app-proyects',

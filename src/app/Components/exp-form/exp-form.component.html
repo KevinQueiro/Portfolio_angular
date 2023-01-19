@@ -4,11 +4,11 @@
       <div class="form-holder mb-5">
         <div class="form-content">
           <div class="form-items">
-            <div *ngIf="true">
-              <h3>Agregar Skill</h3>
+            <div *ngIf="actualUrl.includes('add')">
+              <h3>Agregar Experiencia</h3>
             </div>
-            <div *ngIf="">
-              <h3>Modificar Skill</h3>
+            <div *ngIf="actualUrl.includes('change')">
+              <h3>Modificar Experiencia</h3>
             </div>
             <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
               <div class="input-group col-md-12">
@@ -80,7 +80,7 @@
       </div>
     </div>
   </div>
-  <div class="col tecnos mt-4 me-3">
+  <div *ngIf="actualUrl.includes('change')" class="col tecnos mt-4 me-3">
     <h3>Sacar</h3>
     <div *ngIf="actualUrl.includes('change')">
       <ul *ngFor="let expTecno of exp.tecnologias">
