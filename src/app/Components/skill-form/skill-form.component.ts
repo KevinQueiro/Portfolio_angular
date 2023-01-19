@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SkillsI } from 'src/app/models/skills.interface';
-import { DataService } from 'src/app/Services/logIn.service';
 import { FormBuilder } from '@angular/forms';
 import { SkillService } from 'src/app/Services/skill.service';
 
@@ -49,7 +48,7 @@ export class SkillFormComponent implements OnInit {
     );
     let newSkill = {
       nombre: this.checkoutForm.value.nombre || '',
-      percen: `${this.checkoutForm.value.percen}%` || '',
+      percen: `${this.checkoutForm.value.percen}%` || ''
     };
     this.skillSvc.newSkill(newSkill, this.idUser).subscribe((data) => {
       this.router.navigate(['/Skills']);

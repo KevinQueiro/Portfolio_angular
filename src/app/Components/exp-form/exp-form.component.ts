@@ -5,6 +5,7 @@ import { ExperienciasI } from 'src/app/models/experiencias.interface';
 import { TecnologiaI } from 'src/app/models/tecnologias.interface';
 import { ExpService } from 'src/app/Services/exp.service';
 import { DataService } from 'src/app/Services/logIn.service';
+import { TecnoService } from 'src/app/Services/tecno.service';
 
 @Component({
   selector: 'app-exp-form',
@@ -31,9 +32,10 @@ export class ExpFormComponent implements OnInit {
   tecnos!: TecnologiaI[];
   checkoutForm = this.formBuilder.group(this.expTem);
   actualUrl = window.location.href;
+  sesion: boolean | undefined;
 
   constructor(
-    private dataSvc: DataService,
+    private tecnoSvc: TecnoService,
     private expSvc: ExpService,
     private router: Router,
     private formBuilder: FormBuilder,
@@ -43,8 +45,12 @@ export class ExpFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSvc.getAllTecno().subscribe((data) => (this.tecnos = data));
+    this.tecnoSvc.getAllTecno().subscribe((data) => (this.tecnos = data));
     this.actualUrl.includes('add') ? null : this.getExp();
+    if (sessionStorage.getItem('sesion') == 'true') {
+      this.sesion = true;
+      console.log(this.sesion);
+    }
   }
 
   getExp() {
@@ -116,4 +122,11 @@ export class ExpFormComponent implements OnInit {
   .subscribe((data)=> null)
   this.router.navigate([`/Exp/change/${this.idExp}`]).then(() => window.location.reload())
   }
+
+  onDelete(idTecno: number | undefined){
+    this.tecnoSvc.deleteTecno(idTecno)
+    .subscribe((data)=> null)
+  this.router.navigate([`/Exp/change/${this.idExp}`]).then(() => window.location.reload())
+  }
+
 }

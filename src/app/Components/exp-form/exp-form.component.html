@@ -1,5 +1,5 @@
-<div class="row p-0 m-0">
-  <div class="col">
+<div class="row p-0 m-0 justify-content-center">
+  <div class="col-5">
     <div class="form-body">
       <div class="form-holder mb-5">
         <div class="form-content">
@@ -17,7 +17,7 @@
                   aria-label="With textarea"
                   type="text"
                   formControlName="descripcion"
-                  placeholder="{{ exp.descripcion}}"
+                  placeholder="{{ exp.descripcion }}"
                   required
                 ></textarea>
                 <p style="color: aliceblue" class="pb-0">Descripcion</p>
@@ -57,7 +57,7 @@
                   class="form-control"
                   type="date"
                   formControlName="fechaFin"
-                  value="{{ exp.fechaFin}}"
+                  value="{{ exp.fechaFin }}"
                   required
                 />
                 <p style="color: aliceblue" class="pb-0">Fecha fin</p>
@@ -80,19 +80,33 @@
       </div>
     </div>
   </div>
-  <div *ngIf="actualUrl.includes('change')" class="col tecnos mt-4 me-3">
+  <div *ngIf="actualUrl.includes('change')" class="col-3 tecnos m-3">
     <h3>Sacar</h3>
     <div *ngIf="actualUrl.includes('change')">
       <ul *ngFor="let expTecno of exp.tecnologias">
-        <li>{{ expTecno.nombre }} <i (click)="deleteTecno(expTecno.id)" class="bi bi-arrow-down-circle"></i></li>
+        <li>
+          <i
+            (click)="deleteTecno(expTecno.id)"
+            class="bi bi-arrow-down-circle"
+          ></i>
+          {{ expTecno.nombre }}
+        </li>
       </ul>
     </div>
     <hr />
     <h3>Agregar</h3>
     <div *ngIf="actualUrl.includes('change')">
       <ul *ngFor="let tecno of tecnos">
-        <li>{{ tecno.nombre }} <i (click)="addTecno(tecno.id)" class="bi bi-arrow-up-circle"></i></li>
+        <li>
+          <i (click)="addTecno(tecno.id)" class="bi bi-arrow-up-circle"></i>
+          {{ tecno.nombre }}
+          <i class="bi bi-pencil-square" routerLink="/Tecno/change/{{ tecno.id }}"></i>
+          <i class="bi bi-x-octagon ms-3" (click)="onDelete(tecno.id)"></i>
+        </li>
       </ul>
+    </div>
+    <div *ngIf="sesion" class="text-center pt-5 pb-5">
+      <i class="bi-plus-circle" routerLink="/Tecno/add"></i>
     </div>
   </div>
 </div>

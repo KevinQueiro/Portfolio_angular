@@ -2,19 +2,19 @@
     <div class="form-holder">
       <div class="form-content">
         <div class="form-items">
-          <div *ngIf="true">
+          <div *ngIf="actualUrl.includes('add')">
             <h3>Agregar Tecno</h3>
           </div>
-          <div *ngIf="">
+          <div *ngIf="actualUrl.includes('change')">
             <h3>Modificar Tecno</h3>
           </div>
-          <form>
+          <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
             <div class="col-md-12">
               <input
                 class="form-control"
                 type="text"
                 formControlName="nombre"
-                placeholder="{{'nombre'}}"
+                placeholder="{{tecno.nombre || 'nombre'}}"
                 required
               />
             </div>
@@ -23,17 +23,17 @@
                 class="form-control"
                 type="text"
                 formControlName="tipo"
-                placeholder="{{'tipo'}}"
+                placeholder="{{tecno.tipo ||'tipo'}}"
                 required
               />
             </div>
             <div class="form-button mt-3">
-              <div *ngIf="">
+              <div *ngIf="actualUrl.includes('add')">
                 <button id="submit" type="submit" class="btn btn-primary">
                   Guardar
                 </button>
               </div>
-              <div *ngIf="">
+              <div *ngIf="actualUrl.includes('change')">
                 <button id="submit" type="submit" class="btn btn-primary">
                   Modificar
                 </button>
@@ -44,4 +44,3 @@
       </div>
     </div>
   </div>
-  

@@ -4,12 +4,11 @@ import { Observable } from 'rxjs';
 import { SkillsI } from '../models/skills.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SkillService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-  
   getSkillById(skillId: String | null): Observable<SkillsI> {
     return this.http.get<SkillsI>(
       `http://localhost:8080/skills/one/${skillId}`
@@ -36,5 +35,4 @@ export class SkillService {
       `http://localhost:8080/skills/delete/${skillId}`
     );
   }
-
 }
