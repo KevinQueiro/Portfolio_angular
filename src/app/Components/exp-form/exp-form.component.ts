@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ExperienciasI } from 'src/app/models/experiencias.interface';
 import { TecnologiaI } from 'src/app/models/tecnologias.interface';
 import { ExpService } from 'src/app/Services/exp.service';
-import { DataService } from 'src/app/Services/logIn.service';
 import { TecnoService } from 'src/app/Services/tecno.service';
 
 @Component({

@@ -8,6 +8,8 @@
         <div class="card" style="width: 500px">
           <div class="row no-gutters">
             <div class="col-sm-5">
+              <i class="bi bi-pencil-square" routerLink="change/{{ pro.id }}"></i>
+              <i class="bi bi-x-octagon ms-3" (click)="onDelete(pro.id)"></i>
               <img class="card-img mt-2" src="{{ pro.foto }}" alt="..." />
               <div *ngFor="let tecno of pro.tecnologias">
                 <p>┼ {{tecno.nombre}} ┼</p>
@@ -25,5 +27,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div *ngIf="sesion" class="text-center pt-5 pb-5">
+    <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
   </div>
 </div>

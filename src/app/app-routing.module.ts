@@ -11,9 +11,12 @@ import { ExperienceComponent } from './Components/experience/experience.componen
 import { SkillFormComponent } from './Components/skill-form/skill-form.component';
 import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component';
 import { ExpFormComponent } from './Components/exp-form/exp-form.component';
+import { ProjectFormComponent } from './Components/project-form/project-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Welcome', pathMatch: 'full' },
+  {path:'Projects/add/:userId', component: ProjectFormComponent},
+  {path:'Projects/change/:proId', component: ProjectFormComponent},
   { path: 'Tecno/add', component: TecnoFormComponent },
   { path: 'Tecno/change/:tecnoId', component: TecnoFormComponent },
   { path: 'Exp/add/:userId', component: ExpFormComponent },

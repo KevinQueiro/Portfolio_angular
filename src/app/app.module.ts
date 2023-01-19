@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SkillFormComponent } from './Components/skill-form/skill-form.component';
 import { ExpFormComponent } from './Components/exp-form/exp-form.component';
 import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component';
+import { ProjectFormComponent } from './Components/project-form/project-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component
     FooterComponent,
     SkillFormComponent,
     ExpFormComponent,
-    TecnoFormComponent
+    TecnoFormComponent,
+    ProjectFormComponent
   ],
   imports: [
     BrowserModule,
