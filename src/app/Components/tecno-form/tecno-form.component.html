@@ -1,0 +1,47 @@
+<div class="form-body">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <div *ngIf="true">
+            <h3>Agregar Tecno</h3>
+          </div>
+          <div *ngIf="">
+            <h3>Modificar Tecno</h3>
+          </div>
+          <form>
+            <div class="col-md-12">
+              <input
+                class="form-control"
+                type="text"
+                formControlName="nombre"
+                placeholder="{{'nombre'}}"
+                required
+              />
+            </div>
+            <div class="col-md-12">
+              <input
+                class="form-control"
+                type="text"
+                formControlName="tipo"
+                placeholder="{{'tipo'}}"
+                required
+              />
+            </div>
+            <div class="form-button mt-3">
+              <div *ngIf="">
+                <button id="submit" type="submit" class="btn btn-primary">
+                  Guardar
+                </button>
+              </div>
+              <div *ngIf="">
+                <button id="submit" type="submit" class="btn btn-primary">
+                  Modificar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -14,7 +14,7 @@
               class="form-control"
               type="text"
               formControlName="nombre"
-              placeholder="{{skill.nombre}}"
+              placeholder="{{skill.nombre || 'nombre'}}"
               required
             />
           </div>
@@ -23,7 +23,7 @@
               class="form-control"
               type="text"
               formControlName="percen"
-              placeholder="{{skill.percen}}"
+              placeholder="{{skill.percen || 'porcentaje'}}"
               required
             />
           </div>

@@ -16,6 +16,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SkillFormComponent } from './Components/skill-form/skill-form.component';
+import { ExpFormComponent } from './Components/exp-form/exp-form.component';
+import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { SkillFormComponent } from './Components/skill-form/skill-form.component
     StartComponent,
     NavbarComponent,
     FooterComponent,
-    SkillFormComponent
+    SkillFormComponent,
+    ExpFormComponent,
+    TecnoFormComponent
   ],
   imports: [
     BrowserModule,

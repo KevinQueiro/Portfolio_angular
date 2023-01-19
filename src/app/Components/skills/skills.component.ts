@@ -19,7 +19,7 @@ export class SkillsComponent implements OnInit {
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
       console.log(this.sesion);
-    }
+    }    
   }
 
   onDelete(idSkill: number | undefined) {

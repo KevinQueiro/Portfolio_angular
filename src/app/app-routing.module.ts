@@ -9,10 +9,14 @@ import { SkillsComponent } from './Components/skills/skills.component'
 import { ProyectsComponent } from './Components/proyects/proyects.component'
 import { ExperienceComponent } from './Components/experience/experience.component';
 import { SkillFormComponent } from './Components/skill-form/skill-form.component';
-
+import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component';
+import { ExpFormComponent } from './Components/exp-form/exp-form.component'
 
 const routes: Routes = [
   {path: '', redirectTo: '/Welcome', pathMatch: 'full'},
+  {path:'Tecno/add', component:TecnoFormComponent},
+  {path:'Exp/add/:userId', component:ExpFormComponent},
+  {path:'Exp/change/:expId', component:ExpFormComponent},
   {path:'Skills/change/:skillId', component:SkillFormComponent},
   {path:'Skills/add/:userId', component:SkillFormComponent},
   {path: 'Welcome', component:LandingComponent},

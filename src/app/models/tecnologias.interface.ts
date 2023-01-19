@@ -1,5 +1,5 @@
 export interface TecnologiaI {
-    id: number;
+    id?: number;
     nombre:String;
     tipo:String
 }

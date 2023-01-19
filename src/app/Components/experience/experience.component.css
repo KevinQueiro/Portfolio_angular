@@ -48,3 +48,30 @@
 .lugar{
   align-items: center;
 }
+
+i:hover {
+  color: rgb(255, 102, 0);
+  text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
+    .25px .25px 0 rgb(255, 102, 0),
+    0 0 10px rgb(255, 102, 0),
+    0 0 20px rgb(255, 102, 0),
+    0 0 40px rgb(255, 102, 0),
+    0 0 80px rgb(255, 102, 0);
+  cursor: pointer;
+}
+
+
+.bi-plus-circle {
+  font-size: xxx-large;
+}
+
+.bi-x-octagon:hover {
+  color: rgb(199, 15, 15);
+  text-shadow: -.25px -.25px 0 rgb(199, 15, 15),
+    .25px .25px 0 rgb(199, 15, 15),
+    0 0 10px rgb(199, 15, 15),
+    0 0 20px rgb(199, 15, 15),
+    0 0 40px rgb(199, 15, 15),
+    0 0 80px rgb(199, 15, 15);
+  cursor: pointer;
+}
