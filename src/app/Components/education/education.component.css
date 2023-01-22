@@ -1,3 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+*,
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 p{
     color: aliceblue;
 }
+
+.photoPreview {
+    height: 150px;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.each {
+    height: 80%;
+    width: 50%;
+    border: 3px solid rgb(255, 102, 0);
+    border-radius: 25px;
+}
+
+.each:hover, h3:hover {
+    color: rgb(255, 102, 0);
+    text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
+        .25px .25px 0 rgb(255, 102, 0),
+        0 0 10px rgb(255, 102, 0),
+        0 0 20px rgb(255, 102, 0),
+        0 0 40px rgb(255, 102, 0),
+        0 0 80px rgb(255, 102, 0);
+}
+
+.each:hover {
+    box-shadow: -.25px -.25px 0 rgb(255, 102, 0),
+    .25px .25px 0 rgb(255, 102, 0),
+    0 0 10px rgb(255, 102, 0),
+    0 0 20px rgb(255, 102, 0),
+    0 0 40px rgb(255, 102, 0),
+    0 0 80px rgb(255, 102, 0);
+}
+
+.bi-x-octagon:hover {
+    color: rgb(199, 15, 15);
+    text-shadow: -.25px -.25px 0 rgb(199, 15, 15),
+      .25px .25px 0 rgb(199, 15, 15),
+      0 0 10px rgb(199, 15, 15),
+      0 0 20px rgb(199, 15, 15),
+      0 0 40px rgb(199, 15, 15),
+      0 0 80px rgb(199, 15, 15);
+    cursor: pointer;
+  }
+
+  .bi-plus-circle {
+    font-size: xxx-large;
+  }
+
+  i:hover {
+    color: rgb(255, 102, 0);
+    text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
+      .25px .25px 0 rgb(255, 102, 0),
+      0 0 10px rgb(255, 102, 0),
+      0 0 20px rgb(255, 102, 0),
+      0 0 40px rgb(255, 102, 0),
+      0 0 80px rgb(255, 102, 0);
+    cursor: pointer;
+  }

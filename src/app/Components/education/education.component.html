@@ -1,1 +1,30 @@
-<p>education works!</p>
+<h3 class="text-center mt-3 mb-3" style="color: aliceblue">EDUCACION</h3>
+<div *ngFor="let user of usuario">
+  <div *ngFor="let edu of user.educaciones">
+    <div class="container-fluid mb-5 each" style="color: white">
+      <div *ngIf="sesion" class="text-end">
+        <i class="bi bi-pencil-square" routerLink="change/{{ edu.id }}"></i>
+        <i class="bi bi-x-octagon ms-3" (click)="onDelete(edu.id)"></i>
+      </div>
+      <div class="d-flex">
+        <div class="flex-row m-2 flex-fill align-self-center">
+          <img src="{{ edu.foto }}" alt="" class="photoPreview mx-auto" />
+        </div>
+        <div class="flex-row m-2 flex-fill">
+          <h3 class="text-center mt-3" style="color: aliceblue">
+            {{ edu.lugar }}
+          </h3>
+          <p class="text-center">
+            {{ edu.titulo }}
+          </p>
+          <p class="text-center">
+            {{ edu.fechaFin }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="sesion" class="text-center pt-5 pb-5" style="color: aliceblue;">
+  <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
+</div>

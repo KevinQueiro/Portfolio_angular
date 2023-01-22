@@ -17,11 +17,15 @@ h1, h2, hr
   transition: 1s;
 }
 
-h1:hover, h2:hover, hr:hover, .btn-primary:hover
+h1:hover, h2:hover, hr:hover, .btn-primary:hover, .bi-plus-circle:hover
 {
   color: rgb(255, 102, 0);
   text-shadow: 0 0 10px rgb(255, 102, 0),
                0 0 20px rgb(255, 102, 0),
                0 0 40px rgb(255, 102, 0),
                0 0 80px rgb(255, 102, 0);
+}
+
+.bi-plus-circle {
+  font-size: xxx-large;
 }
