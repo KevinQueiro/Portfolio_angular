@@ -1,0 +1,66 @@
+<div class="form-body">
+  <div class="form-holder">
+    <div class="form-content">
+      <div class="form-items">
+        <h3>Modificar Usuario</h3>
+        <form [formGroup]="checkoutForm" (ngSubmit)="changeUser()">
+          <div class="col-md-12">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="nombre"
+              placeholder="Nombre"
+              value="{{ user.nombre }}"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="apellido"
+              placeholder="Apellido"
+              value="{{ user.apellido }}"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="titulo"
+              placeholder="Titulo"
+              value="{{ user.titulo }}"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="foto"
+              placeholder="Foto"
+              value="{{ user.foto }}"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <textarea
+              class="form-control"
+              type="textarea"
+              formControlName="about"
+              placeholder="Un poco sobre vos"
+              value="{{ user.about }}"
+              required
+            ></textarea>
+          </div>
+          <div class="form-button mt-3">
+            <button id="submit" type="submit" class="btn btn-primary">
+              Modificar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EducacionesI } from '../models/educaciones.interface';
-import { ExperienciasI } from '../models/experiencias.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class EduService {
 
   getEduById(eduId: String | null): Observable<EducacionesI> {
     return this.http.get<EducacionesI>(
-      `http://localhost:8080/educacion/one/${eduId}`
+      environment.baseUrl + `/educacion/one/${eduId}`
     );
   }
 
@@ -21,14 +21,14 @@ export class EduService {
     userId: String | null
   ): Observable<EducacionesI> {
     return this.http.post<EducacionesI>(
-      `http://localhost:8080/educacion/save?user=${userId}`,
+      environment.baseUrl + `/educacion/save?user=${userId}`,
       newEdu
     );
   }
 
   deleteEdu(eduId: number | null | undefined): Observable<boolean> {
     return this.http.delete<boolean>(
-      `http://localhost:8080/educacion/delete/${eduId}`
+      environment.baseUrl + `/educacion/delete/${eduId}`
     );
   }
 
@@ -37,7 +37,7 @@ export class EduService {
     newEdu: EducacionesI
   ): Observable<EducacionesI> {
     return this.http.put<EducacionesI>(
-      `http://localhost:8080/educacion/change/${eduId}`,
+      environment.baseUrl + `educacion/change/${eduId}`,
       newEdu
     );
   }

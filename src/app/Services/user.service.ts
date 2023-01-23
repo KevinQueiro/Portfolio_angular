@@ -1,12 +1,37 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TecnologiaI } from '../models/tecnologias.interface';
+import { LoginI } from '../models/login.interface';
+import { UsuarioI } from '../models/usuarios.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   constructor(private http: HttpClient) {}
+  getAllUsuarios(): Observable<UsuarioI[]> {
+    return this.http.get<UsuarioI[]>(
+      environment.baseUrl + '/usuarios/all'
+      );
+  }
 
+  login(log: LoginI): Observable<boolean> {
+    return this.http.post<boolean>(
+      environment.baseUrl + '/login', log
+    );
+  }
+
+  changeUserData(newUserData: UsuarioI, userId: String | null): Observable<UsuarioI> {
+    return this.http.put<UsuarioI>(
+      environment.baseUrl + `/usuarios/change/${userId}`,
+      newUserData
+    )
+  }
+
+  getUserById(userId: String | null): Observable<UsuarioI> {
+    return this.http.get<UsuarioI>(
+      environment.baseUrl + `/usuarios/one/${userId}`
+    )
+  }
 }

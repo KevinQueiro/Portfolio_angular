@@ -48,7 +48,8 @@ export class ExpFormComponent implements OnInit {
     this.actualUrl.includes('add') ? null : this.getExp();
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
-      console.log(this.sesion);
+    } else {
+      this.router.navigate(['/Exp'])
     }
   }
 
@@ -62,7 +63,6 @@ export class ExpFormComponent implements OnInit {
   }
 
   addExp() {
-    console.log('add');
     this.route.paramMap.subscribe(
       (params) => (this.idUser = params.get('userId'))
     );
@@ -103,7 +103,6 @@ export class ExpFormComponent implements OnInit {
       fechaIni: this.checkoutForm.value.fechaIni || this.exp.fechaIni,
       fechaFin: this.checkoutForm.value.fechaFin || this.exp.fechaFin
     }
-    console.log("datos",newExp);
   this.expSvc.addTecnoToExp(this.exp.id,false,idTecno,newExp)
   .subscribe((data)=> null)
   this.router.navigate([`/Exp/change/${this.idExp}`]).then(() => window.location.reload())

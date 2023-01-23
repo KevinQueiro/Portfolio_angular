@@ -42,6 +42,8 @@ export class EduFormComponent implements OnInit {
     this.actualUrl.includes('add') ? null : this.getEdu();
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
+    } else {
+      this.router.navigate(['/Education'])
     }
   }
 

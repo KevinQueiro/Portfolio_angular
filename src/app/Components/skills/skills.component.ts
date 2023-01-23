@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioI } from 'src/app/models/usuarios.interface';
-import { DataService } from 'src/app/Services/logIn.service';
 import { SkillService } from 'src/app/Services/skill.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-skills',
@@ -14,24 +14,20 @@ export class SkillsComponent implements OnInit {
   sesion: boolean | undefined;
 
   constructor(
-    private dataSvc: DataService,
+    private userSvc: UserService,
     private skillSvc: SkillService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.dataSvc
-    .getAllUsuarios()
-    .subscribe((data) => (this.usuario = data));
+    this.userSvc.getAllUsuarios().subscribe((data) => (this.usuario = data));
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
-      console.log(this.sesion);
     }
   }
 
   onDelete(idSkill: number | undefined) {
-    console.log(idSkill);
-    this.skillSvc.deleteSkill(idSkill).subscribe((data) => console.log(data));
+    this.skillSvc.deleteSkill(idSkill).subscribe((data) => null);
     this.router.navigate(['/Skills']).then(() => window.location.reload());
   }
 }

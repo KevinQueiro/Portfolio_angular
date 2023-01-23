@@ -4,14 +4,14 @@ import { ProyectosI } from './proyectos.interface';
 import { SkillsI } from './skills.interface';
 
 export interface UsuarioI {
-  id: number;
+  id?: number;
   nombre: String;
   apellido: String;
   titulo: String;
   about: String;
   foto: String;
-  skills: SkillsI[];
-  educaciones: EducacionesI[];
-  exps: ExperienciasI[];
-  proyectos: ProyectosI[];
+  skills?: SkillsI[];
+  educaciones?: EducacionesI[];
+  exps?: ExperienciasI[];
+  proyectos?: ProyectosI[];
 }

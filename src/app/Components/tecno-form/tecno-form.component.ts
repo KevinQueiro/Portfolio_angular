@@ -14,6 +14,7 @@ export class TecnoFormComponent implements OnInit {
   tecno: TecnologiaI = { nombre: '', tipo: '' };
   checkoutForm = this.formBuilder.group({ nombre: '', tipo: '' });
   actualUrl = window.location.href;
+  sesion: boolean | undefined;
 
   constructor(
     private router: Router,
@@ -26,6 +27,11 @@ export class TecnoFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.actualUrl.includes('add') ? null : this.getTecno();
+    if (sessionStorage.getItem('sesion') == 'true') {
+      this.sesion = true;
+    } else {
+      this.router.navigate(['/Welcome'])
+    }
   }
 
   getTecno() {
@@ -52,7 +58,6 @@ export class TecnoFormComponent implements OnInit {
       nombre: this.checkoutForm.value.nombre || this.tecno.nombre,
       tipo: this.checkoutForm.value.tipo || this.tecno.tipo,
     };
-    console.log(newTecno);
     
     this.tecnoSvc.changeTecno(newTecno, this.idTecno).subscribe((data) => {
       history.back();

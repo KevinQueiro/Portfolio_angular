@@ -12,6 +12,7 @@ import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component
 import { ExpFormComponent } from './Components/exp-form/exp-form.component';
 import { ProjectFormComponent } from './Components/project-form/project-form.component';
 import { EduFormComponent } from './Components/edu-form/edu-form.component';
+import { UserFormComponent } from './Components/user-form/user-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Welcome', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'Skills/change/:skillId', component: SkillFormComponent },
   { path: 'Tecno/change/:tecnoId', component: TecnoFormComponent },
   { path: 'Tecno/add', component: TecnoFormComponent },
+  { path: 'User/change/:userId', component: UserFormComponent},
   { path: '**', component: Page404Component },
 ];
 

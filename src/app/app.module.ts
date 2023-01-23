@@ -19,6 +19,7 @@ import { ExpFormComponent } from './Components/exp-form/exp-form.component';
 import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component';
 import { ProjectFormComponent } from './Components/project-form/project-form.component';
 import { EduFormComponent } from './Components/edu-form/edu-form.component';
+import { UserFormComponent } from './Components/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EduFormComponent } from './Components/edu-form/edu-form.component';
     ExpFormComponent,
     TecnoFormComponent,
     ProjectFormComponent,
-    EduFormComponent
+    EduFormComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
