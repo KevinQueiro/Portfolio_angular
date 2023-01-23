@@ -1,49 +1,70 @@
-h2
-{
-font-size: 6em;
-font-weight: 500;
-color: white;
-letter-spacing: 5px;
-cursor: pointer;
-justify-content: center;
+h2 {
+  font-size: 6em;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 5px;
+  cursor: pointer;
+  justify-content: center;
 }
 
-h2 span
-{
+h2 span {
   transition: 1s;
 }
 
-h2:hover span:nth-child(1)
-{
+h2:hover span:nth-child(1) {
   margin-right: 10px;
 }
 
-h2:hover span:nth-child(1):after
-{
+h2:hover span:nth-child(1):after {
   content: "evin";
 }
 
-h2:hover span:nth-child(2):after
-{
+h2:hover span:nth-child(2):after {
   content: "ueiro";
 }
 
-h2:hover span:nth-child(2)
-{
+h2:hover span:nth-child(2) {
   margin-left: 40px;
 }
 
-h2:hover span
-{
-  color: rgb(255, 102, 0);
-  text-shadow: 0 0 10px rgb(255, 102, 0),
-               0 0 20px rgb(255, 102, 0),
-               0 0 40px rgb(255, 102, 0),
-               0 0 80px rgb(255, 102, 0);
+.avatar {
+  box-shadow: -.25px -.25px 0 rgb(255, 102, 0),
+    .25px .25px 0 rgb(255, 102, 0),
+    0 0 10px rgb(255, 102, 0),
+    0 0 20px rgb(255, 102, 0),
+    0 0 40px rgb(255, 102, 0);
 }
 
-#name
-{
+.card-title  {
+  color: rgb(247, 245, 244);
+  text-shadow: 0 0 10px rgb(255, 102, 0),
+    0 0 20px rgb(255, 102, 0),
+    0 0 40px rgb(255, 102, 0),
+    0 0 80px rgb(255, 102, 0),
+    0 0 100px rgb(255, 102, 0),
+    0 0 120px rgb(255, 102, 0);
+}
+
+h2:hover span {
+  color: rgb(255, 102, 0);
+  text-shadow: 0 0 10px rgb(255, 102, 0),
+    0 0 20px rgb(255, 102, 0),
+    0 0 40px rgb(255, 102, 0),
+    0 0 80px rgb(255, 102, 0);
+}
+
+.bi-pencil-square:hover  {
+  color: rgb(247, 245, 244);
+  text-shadow: 0 0 10px rgb(255, 102, 0),
+    0 0 20px rgb(255, 102, 0),
+    0 0 40px rgb(255, 102, 0),
+    0 0 80px rgb(255, 102, 0),
+    0 0 100px rgb(255, 102, 0),
+    0 0 120px rgb(255, 102, 0);
+  cursor: pointer;
+}
+
+#name {
   height: 100%;
   justify-content: center;
   display: flex;

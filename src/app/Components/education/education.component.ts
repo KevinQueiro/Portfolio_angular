@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioI } from 'src/app/models/usuarios.interface';
 import { EduService } from 'src/app/Services/edu.service';
-import { DataService } from 'src/app/Services/logIn.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-education',
@@ -14,20 +14,20 @@ export class EducationComponent implements OnInit {
   sesion: boolean | undefined;
 
   constructor(
-    private dataSvc: DataService,
+    private userSvc: UserService,
     private eduSvc: EduService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.dataSvc.getAllUsuarios().subscribe((data) => (this.usuario = data));
+    this.userSvc.getAllUsuarios().subscribe((data) => (this.usuario = data));
     if(sessionStorage.getItem('sesion') == 'true'){
       this.sesion = true;
     }
   }
 
   onDelete(idEdu: number | undefined){
-    this.eduSvc.deleteEdu(idEdu).subscribe((data) => console.log(data));
+    this.eduSvc.deleteEdu(idEdu).subscribe((data) => null);
     this.router.navigate(['/Education']).then(() => window.location.reload());
   }
 

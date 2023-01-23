@@ -12,9 +12,10 @@ import { SkillService } from 'src/app/Services/skill.service';
 export class SkillFormComponent implements OnInit {
   idUser: string | null = '';
   idSkill: string | null = '';
-  skill: SkillsI = { id: 0, nombre: '', percen: '' };
+  skill: SkillsI = { nombre: '', percen: '' };
   checkoutForm = this.formBuilder.group({ nombre: '', percen: '' });
   actualUrl = window.location.href;
+  sesion: boolean | undefined;
 
   constructor(
     private router: Router,
@@ -26,9 +27,12 @@ export class SkillFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.actualUrl.includes('add'));
-
     this.actualUrl.includes('add') ? null : this.getSkill();
+    if (sessionStorage.getItem('sesion') == 'true') {
+      this.sesion = true;
+    } else {
+      this.router.navigate(['/Skills']);
+    }
   }
 
   getSkill() {
@@ -41,14 +45,12 @@ export class SkillFormComponent implements OnInit {
   }
 
   addSkill() {
-    console.log('addSkill');
-
     this.route.paramMap.subscribe(
       (params) => (this.idUser = params.get('userId'))
     );
     let newSkill = {
       nombre: this.checkoutForm.value.nombre || '',
-      percen: `${this.checkoutForm.value.percen}%` || ''
+      percen: `${this.checkoutForm.value.percen}%` || '',
     };
     this.skillSvc.newSkill(newSkill, this.idUser).subscribe((data) => {
       this.router.navigate(['/Skills']);
@@ -56,8 +58,6 @@ export class SkillFormComponent implements OnInit {
   }
 
   changeSkill() {
-    console.log('ChangeSkill');
-
     let newSkill = {
       nombre: this.checkoutForm.value.nombre || this.skill.nombre,
       percen: this.checkoutForm.value.percen || this.skill.percen,
@@ -68,7 +68,6 @@ export class SkillFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('onSubmit');
     this.actualUrl.includes('add') ? this.addSkill() : this.changeSkill();
   }
 }

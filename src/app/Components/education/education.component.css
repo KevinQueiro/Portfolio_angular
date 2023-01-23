@@ -13,6 +13,16 @@ p{
     color: aliceblue;
 }
 
+.title {
+  color: aliceblue;
+  text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
+      .25px .25px 0 rgb(255, 102, 0),
+      0 0 10px rgb(255, 102, 0),
+      0 0 20px rgb(255, 102, 0),
+      0 0 40px rgb(255, 102, 0),
+      0 0 80px rgb(255, 102, 0);
+}
+
 .photoPreview {
     height: 150px;
     width: 300px;

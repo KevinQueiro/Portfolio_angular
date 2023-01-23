@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
-import { DataService } from 'src/app/Services/logIn.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -20,14 +20,12 @@ export class LoginComponent {
   constructor(
     private configAlert: NgbAlertConfig,
     private formBuilder: FormBuilder,
-    private dataSvc: DataService,
+    private userSvc: UserService,
     private router: Router
   ) {}
 
   onSubmit() {
-    console.log(this.checkoutForm.value.UserName);
-
-    this.dataSvc
+    this.userSvc
       .login({
         UserName: this.checkoutForm.value.UserName ?? '',
         password: this.checkoutForm.value.password ?? '',

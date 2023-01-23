@@ -46,6 +46,8 @@ export class ProjectFormComponent implements OnInit {
     this.actualUrl.includes('add') ? null : this.getPro();
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
+    } else {
+      this.router.navigate(['/Projects'])
     }
   }
 
