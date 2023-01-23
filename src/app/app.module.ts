@@ -10,7 +10,6 @@ import { ExperienceComponent } from './Components/experience/experience.componen
 import { SkillsComponent } from './Components/skills/skills.component';
 import { ProyectsComponent } from './Components/proyects/proyects.component';
 import { EducationComponent } from './Components/education/education.component';
-import { StartComponent } from './Components/start/start.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HttpClientModule } from "@angular/common/http";
@@ -19,6 +18,7 @@ import { SkillFormComponent } from './Components/skill-form/skill-form.component
 import { ExpFormComponent } from './Components/exp-form/exp-form.component';
 import { TecnoFormComponent } from './Components/tecno-form/tecno-form.component';
 import { ProjectFormComponent } from './Components/project-form/project-form.component';
+import { EduFormComponent } from './Components/edu-form/edu-form.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +30,13 @@ import { ProjectFormComponent } from './Components/project-form/project-form.com
     SkillsComponent,
     ProyectsComponent,
     EducationComponent,
-    StartComponent,
     NavbarComponent,
     FooterComponent,
     SkillFormComponent,
     ExpFormComponent,
     TecnoFormComponent,
-    ProjectFormComponent
+    ProjectFormComponent,
+    EduFormComponent
   ],
   imports: [
     BrowserModule,

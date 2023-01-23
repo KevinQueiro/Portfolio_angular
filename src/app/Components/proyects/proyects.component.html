@@ -1,34 +1,33 @@
-<div class="m-0 row justify-content-center main mb-5">
-  <h1 class="col-auto pt-4 text-center">MIS PROYECTOS</h1>
-  <div *ngFor="let user of usuario">
-    <div *ngFor="let pro of user.proyectos">
-      <div class="container bcontent row justify-content-center text-center">
-        <h2 class="mt-4">-> {{ pro.nombre }} <-</h2>
-        <hr />
-        <div class="card" style="width: 500px">
-          <div class="row no-gutters">
-            <div class="col-sm-5">
-              <i class="bi bi-pencil-square" routerLink="change/{{ pro.id }}"></i>
-              <i class="bi bi-x-octagon ms-3" (click)="onDelete(pro.id)"></i>
-              <img class="card-img mt-2" src="{{ pro.foto }}" alt="..." />
-              <div *ngFor="let tecno of pro.tecnologias">
-                <p>┼ {{tecno.nombre}} ┼</p>
-              </div>
-            </div>
-            <div class="col-sm-7">
-              <div class="card-body">
-                <p class="card-text">{{ pro.descripcion }}</p>
-                <a href="{{ pro.link }}" class="btn btn-primary">
-                  ver {{ pro.nombre }}
-                </a>
-              </div>
-            </div>
-          </div>
+<h3 class="text-center mt-3 mb-3" style="color: aliceblue">PROYECTOS</h3>
+<div *ngFor="let user of usuario">
+  <div *ngFor="let pro of user.proyectos">
+    <div class="container-fluid mb-5 each" style="color: white">
+      <div *ngIf="sesion" class="text-end">
+        <i class="bi bi-pencil-square" routerLink="change/{{ pro.id }}"></i>
+        <i class="bi bi-x-octagon ms-3" (click)="onDelete(pro.id)"></i>
+      </div>
+      <div class="d-flex">
+        <div class="flex-row m-2 flex-fill align-self-center">
+          <img src="{{ pro.foto }}" alt="" class="photoPreview mx-auto" />
+        </div>
+        <div class="flex-row m-2 flex-fill">
+          <h3 class="text-center mt-3" style="color: aliceblue">
+            {{ pro.nombre }}
+          </h3>
+          <p class="text-center">
+            {{ pro.descripcion }}
+          </p>
+          <p class="text-center">Tecnologias utilizadas:</p>
+          <ul *ngFor="let tecno of pro.tecnologias">
+            <li>
+              {{tecno.tipo}} :  {{tecno.nombre}}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  <div *ngIf="sesion" class="text-center pt-5 pb-5">
-    <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
-  </div>
+</div>
+<div *ngIf="sesion" class="text-center pt-5 pb-5" style="color: aliceblue">
+  <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
 </div>

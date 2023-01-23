@@ -2,16 +2,20 @@
   color: aliceblue;
 }
 
+.algo{
+  width: 40vw;
+}
+
 h1:hover {
-  color: rgb(255, 102, 0);
+  color: aliceblue;
   text-shadow: 0 0 10px rgb(255, 102, 0),
     0 0 20px rgb(255, 102, 0),
     0 0 40px rgb(255, 102, 0),
     0 0 80px rgb(255, 102, 0);
 }
 
-.algo:hover h6 {
-  color: rgb(255, 102, 0);
+.algo:hover h5  {
+  color: aliceblue;
   text-shadow: 0 0 10px rgb(255, 102, 0),
     0 0 20px rgb(255, 102, 0),
     0 0 40px rgb(255, 102, 0),
@@ -23,7 +27,7 @@ h1:hover {
 }
 
 i:hover {
-  color: rgb(255, 102, 0);
+  color: aliceblue;
   text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
     .25px .25px 0 rgb(255, 102, 0),
     0 0 10px rgb(255, 102, 0),

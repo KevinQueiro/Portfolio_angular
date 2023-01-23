@@ -48,3 +48,15 @@ h2:hover span
   justify-content: center;
   display: flex;
 }
+
+.avatar {
+  border-radius: 50%;
+  background-color: #000;
+  height: 150px;
+  width: 150px;
+  margin-left: 50px;
+}
+
+.description {
+  width: 70vw;
+}

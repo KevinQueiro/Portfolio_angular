@@ -8,12 +8,8 @@
     font-size:x-large;
 }
 
-.social:hover {
-    color:orange
-}
-
-.home:hover {
-    color: rgb(255, 102, 0);
+.home:hover, .social:hover {
+    color: rgb(218, 216, 216);
     text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
         .25px .25px 0 rgb(255, 102, 0),
         0 0 10px rgb(255, 102, 0),

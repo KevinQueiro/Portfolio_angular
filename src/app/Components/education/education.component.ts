@@ -27,8 +27,8 @@ export class EducationComponent implements OnInit {
   }
 
   onDelete(idEdu: number | undefined){
-    console.log(idEdu);
-    
+    this.eduSvc.deleteEdu(idEdu).subscribe((data) => console.log(data));
+    this.router.navigate(['/Education']).then(() => window.location.reload());
   }
 
 }

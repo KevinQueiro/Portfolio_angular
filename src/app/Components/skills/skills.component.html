@@ -1,16 +1,16 @@
-<div class="skills">
-  <h1 class="text-center">SKILLS</h1>
-  <div class="row container justify-content-center">
+<div class="skills text-center justify-content-center">
+  <h1>SKILLS</h1>
+  <div class="row p-0 m-0">
     <div *ngFor="let user of usuario" class="row justify-content-center">
-      <div *ngFor="let skill of user.skills" class="col-6 mt-4 algo">
+      <div *ngFor="let skill of user.skills" class="col-6 m-4  algo">
         <div *ngIf="sesion" class="text-end">
           <i class="bi bi-pencil-square" routerLink="change/{{ skill.id }}"></i>
           <i class="bi bi-x-octagon ms-3" (click)="onDelete(skill.id)"></i>
         </div>
-        <h6>{{ skill.nombre }}</h6>
+        <h5>{{ skill.nombre }}</h5>
         <div class="progress">
           <div
-            class="progress-bar"
+            class="progress-bar progress-bar-striped progress-bar-animated"
             role="progressbar"
             [ngStyle]="{ width: skill.percen }"
             aria-valuenow="25"
@@ -22,8 +22,8 @@
         </div>
       </div>
     </div>
-    <div *ngIf="sesion" class="text-center pt-5 pb-5">
-      <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
-    </div>
+  </div>
+  <div *ngIf="sesion" class="text-center pt-5 pb-5">
+    <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
   </div>
 </div>

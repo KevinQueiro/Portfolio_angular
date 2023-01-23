@@ -1,17 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../../Services/logIn.service";
+import { Router } from '@angular/router';
+import { UsuarioI } from 'src/app/models/usuarios.interface';
+import { UserService } from 'src/app/Services/user.service';
+import { DataService } from '../../Services/logIn.service';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
+  styleUrls: ['./landing.component.css'],
 })
 export class LandingComponent implements OnInit {
 
-  constructor(private dataSvc:DataService) { }
+  usuario!: UsuarioI[];
+  sesion: boolean | undefined;
+
+  constructor(
+    private dataSvc: DataService,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.dataSvc.getAllUsuarios().subscribe(data=>console.log('usuario',data))
+    this.dataSvc
+      .getAllUsuarios()
+      .subscribe((data) => (this.usuario = data));
+      if (sessionStorage.getItem('session') == 'true'){
+        this.sesion = true
+      }
   }
-
 }

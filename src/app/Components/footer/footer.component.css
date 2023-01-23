@@ -5,7 +5,7 @@
 }
 
 span:hover {
-    color: rgb(255, 102, 0);
+    color: rgb(218, 216, 216);
     text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
         .25px .25px 0 rgb(255, 102, 0),
         0 0 10px rgb(255, 102, 0),
@@ -15,8 +15,8 @@ span:hover {
     cursor: pointer;
 }
 
-strong:hover {
-    color: rgb(255, 102, 0);
+strong {
+    color: rgb(218, 216, 216);
     text-shadow: -.25px -.25px 0 rgb(255, 102, 0),
         .25px .25px 0 rgb(255, 102, 0),
         0 0 10px rgb(255, 102, 0),
