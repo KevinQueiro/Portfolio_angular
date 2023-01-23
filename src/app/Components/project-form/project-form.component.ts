@@ -78,9 +78,9 @@ export class ProjectFormComponent implements OnInit {
       link: this.checkoutForm.value.link || this.pro.link,
       foto: this.checkoutForm.value.foto || this.pro.foto,
     };
-    this.proSvc.changePro(this.idPro, newPro).subscribe((data) => {
-      this.router.navigate(['/Projects']);
-    });
+    this.proSvc
+      .changePro(this.idPro, newPro)
+      .subscribe((data) => this.router.navigate(['/Projects']));
   }
 
   onSubmit() {

@@ -20,7 +20,9 @@ export class SkillsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dataSvc.getAllUsuarios().subscribe((data) => (this.usuario = data));
+    this.dataSvc
+    .getAllUsuarios()
+    .subscribe((data) => (this.usuario = data));
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
       console.log(this.sesion);

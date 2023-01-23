@@ -1,26 +1,30 @@
-<div class="m-0 main mb-5 flex-column justify-content-center">
-  <h1 class="col-auto p-4 text-center">MIS EXPERIENCIAS</h1>
-  <div *ngFor="let user of usuario">
-    <div *ngFor="let exp of user.exps" class="d-flex justify-content-center">
-      
-      <div class="flip-card mb-5 align-middle">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h1 class="">{{exp.lugar}}</h1>
-          </div>
-          <div class="flip-card-back">
-            <div *ngIf="sesion" class="text-end">
-              <i class="bi bi-pencil-square" routerLink="change/{{ exp.id }}"></i>
-              <i class="bi bi-x-octagon ms-3" (click)="onDelete(exp.id)"></i>
-            </div>
-            <p>{{exp.descripcion}}</p>
-            <p>{{exp.fechaIni}} - {{exp.fechaFin}}</p>
-          </div>
+<h3 class="text-center mt-3 mb-3" style="color: aliceblue">EXPERIENCIA</h3>
+<div *ngFor="let user of usuario">
+  <div *ngFor="let exp of user.exps">
+    <div class="container-fluid mb-5 each" style="color: white">
+      <div *ngIf="sesion" class="text-end">
+        <i class="bi bi-pencil-square" routerLink="change/{{ exp.id }}"></i>
+        <i class="bi bi-x-octagon ms-3" (click)="onDelete(exp.id)"></i>
+      </div>
+      <div class="d-flex">
+        <div class="flex-row m-2 flex-fill align-self-center">
+          <img src="{{ exp.foto }}" alt="" class="photoPreview mx-auto" />
+        </div>
+        <div class="flex-row m-2 flex-fill">
+          <h3 class="text-center mt-3" style="color: aliceblue">
+            {{ exp.lugar }}
+          </h3>
+          <p class="text-center">
+           {{exp.descripcion}}
+          </p>
+          <p class="text-center">
+            Desde: {{ exp.fechaIni }} Hasta {{ exp.fechaFin }}
+          </p>
         </div>
       </div>
     </div>
   </div>
-  <div *ngIf="sesion" class="text-center pt-5 pb-5">
-    <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
-  </div>
+</div>
+<div *ngIf="sesion" class="text-center pt-5 pb-5" style="color: aliceblue">
+  <i class="bi-plus-circle" routerLink="add/{{ usuario[0].id }}"></i>
 </div>

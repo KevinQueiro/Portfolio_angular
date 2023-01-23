@@ -1,0 +1,72 @@
+<div class="row p-0 m-0 justify-content-center">
+  <div class="col-5">
+    <div class="form-body">
+      <div class="form-holder mb-5">
+        <div class="form-content">
+          <div class="form-items">
+            <div *ngIf="actualUrl.includes('add')">
+              <h3>Agregar Educacion</h3>
+            </div>
+            <div *ngIf="actualUrl.includes('change')">
+              <h3>Modificar Educacion</h3>
+            </div>
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+              <div class="input-group col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="lugar"
+                  placeholder="Lugar"
+                  value="{{ edu.lugar }}"
+                  required
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="fechaFin"
+                  placeholder="Año de finalizacion"
+                  value="{{ edu.fechaFin }}"
+                  required
+                />
+              </div>
+              <div class="col-md-12 pt-3">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="titulo"
+                  placeholder="Titulo"
+                  value="{{ edu.titulo }}"
+                  required
+                />
+              </div>
+              <div class="col-md-12 pt-3">
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="foto"
+                  placeholder="Foto"
+                  value="{{ edu.foto }}"
+                  required
+                />
+              </div>
+              <div class="form-button mt-3">
+                <div *ngIf="actualUrl.includes('add')">
+                  <button id="submit" type="submit" class="btn btn-primary">
+                    Guardar
+                  </button>
+                </div>
+                <div *ngIf="actualUrl.includes('change')">
+                  <button id="submit" type="submit" class="btn btn-primary">
+                    Modificar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
