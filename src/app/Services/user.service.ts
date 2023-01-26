@@ -11,18 +11,21 @@ import { environment } from 'src/environments/environment';
 export class UserService {
   constructor(private http: HttpClient) {}
   getAllUsuarios(): Observable<UsuarioI[]> {
+    console.log("getAllUsuarios");
     return this.http.get<UsuarioI[]>(
       environment.baseUrl + '/usuarios/all'
       );
   }
 
   login(log: LoginI): Observable<boolean> {
+    console.log("login");
     return this.http.post<boolean>(
       environment.baseUrl + '/login', log
     );
   }
 
   changeUserData(newUserData: UsuarioI, userId: String | null): Observable<UsuarioI> {
+    console.log("changeUserData");
     return this.http.put<UsuarioI>(
       environment.baseUrl + `/usuarios/change/${userId}`,
       newUserData
