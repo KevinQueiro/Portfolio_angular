@@ -12,6 +12,7 @@ export class LandingComponent implements OnInit {
 
   usuario!: UsuarioI[];
   sesion: boolean | undefined;
+  loading: boolean = true;
 
   constructor(
     private userSvc: UserService,
@@ -19,9 +20,10 @@ export class LandingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userSvc.getAllUsuarios().subscribe((data) => (this.usuario = data));
+    this.userSvc.getAllUsuarios().subscribe((data) => {this.loading = false, (this.usuario = data)});
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
     }
+
   }
 }
