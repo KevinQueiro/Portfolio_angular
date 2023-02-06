@@ -28,6 +28,7 @@ export class EduFormComponent implements OnInit {
   checkoutForm = this.formBuilder.group(this.eduTem);
   actualUrl = window.location.href;
   sesion: boolean | undefined;
+  loading: boolean = true;
 
   constructor(
     private eduSvc: EduService,
@@ -51,7 +52,7 @@ export class EduFormComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => (this.idEdu = params.get('eduId'))
     );
-    this.eduSvc.getEduById(this.idEdu).subscribe((data) => (this.edu = data));
+    this.eduSvc.getEduById(this.idEdu).subscribe((data) => {this.loading = false, (this.edu = data)});
   }
 
   addEdu() {

@@ -32,6 +32,7 @@ export class ExpFormComponent implements OnInit {
   checkoutForm = this.formBuilder.group(this.expTem);
   actualUrl = window.location.href;
   sesion: boolean | undefined;
+  loading: boolean = true;
 
   constructor(
     private tecnoSvc: TecnoService,
@@ -59,7 +60,7 @@ export class ExpFormComponent implements OnInit {
     );
     this.expSvc
     .getExpById(this.idExp)
-    .subscribe((data) => (this.exp = data));
+    .subscribe((data) => {this.loading = false, (this.exp = data)});
   }
 
   addExp() {

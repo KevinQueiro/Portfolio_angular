@@ -80,3 +80,15 @@ p{
       0 0 80px rgb(255, 102, 0);
     cursor: pointer;
   }
+
+  .spinner-border {
+    color: rgb(73, 73, 73);
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 102, 0);
+    box-shadow: -.25px -.25px 0 rgb(255, 102, 0),
+    .25px .25px 0 rgb(255, 102, 0),
+    0 0 10px rgb(255, 102, 0),
+    0 0 20px rgb(255, 102, 0),
+    0 0 40px rgb(255, 102, 0);
+  }

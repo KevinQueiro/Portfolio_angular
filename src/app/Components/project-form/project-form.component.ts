@@ -30,6 +30,7 @@ export class ProjectFormComponent implements OnInit {
   checkoutForm = this.formBuilder.group(this.proTem);
   actualUrl = window.location.href;
   sesion: boolean | undefined;
+  loading: boolean = true;
 
   constructor(
     private tecnoSvc: TecnoService,
@@ -55,7 +56,7 @@ export class ProjectFormComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => (this.idPro = params.get('proId'))
     );
-    this.proSvc.getProById(this.idPro).subscribe((data) => (this.pro = data));
+    this.proSvc.getProById(this.idPro).subscribe((data) => {this.loading = false, (this.pro = data)});
   }
 
   addPro() {

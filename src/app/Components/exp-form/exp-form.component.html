@@ -8,7 +8,10 @@
               <h3>Agregar Experiencia</h3>
             </div>
             <div *ngIf="actualUrl.includes('change')">
-              <h3>Modificar Experiencia</h3>
+              <div *ngIf="loading" class="d-flex justify-content-center mb-5">
+                <div class="spinner-border" role="status"></div>
+              </div>
+              <h3>Modificar Experiencia</h3> 
             </div>
             <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
               <div class="input-group col-md-12">

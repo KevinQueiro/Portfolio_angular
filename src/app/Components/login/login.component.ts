@@ -14,8 +14,8 @@ export class LoginComponent {
     UserName: 'User name',
     password: 'Password',
   });
-
   loged: boolean | undefined;
+  loading: boolean = false;
 
   constructor(
     private configAlert: NgbAlertConfig,
@@ -25,6 +25,7 @@ export class LoginComponent {
   ) {}
 
   onSubmit() {
+    this.loading = true;
     this.userSvc
       .login({
         UserName: this.checkoutForm.value.UserName ?? '',

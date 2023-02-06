@@ -1,4 +1,7 @@
 <h3 class="title text-center mt-3 mb-3" style="color: aliceblue">EXPERIENCIA</h3>
+<div *ngIf="loading" class="d-flex justify-content-center mt-5">
+  <div class="spinner-border" role="status"></div>
+</div>
 <div *ngFor="let user of usuario">
   <div *ngFor="let exp of user.exps">
     <div class="container-fluid mb-5 each" style="color: white">

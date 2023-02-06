@@ -12,6 +12,7 @@ import { UserService } from 'src/app/Services/user.service';
 export class SkillsComponent implements OnInit {
   usuario!: UsuarioI[];
   sesion: boolean | undefined;
+  loading: boolean = true;
 
   constructor(
     private userSvc: UserService,
@@ -20,7 +21,7 @@ export class SkillsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userSvc.getAllUsuarios().subscribe((data) => (this.usuario = data));
+    this.userSvc.getAllUsuarios().subscribe((data) => {this.loading = false, (this.usuario = data)});
     if (sessionStorage.getItem('sesion') == 'true') {
       this.sesion = true;
     }

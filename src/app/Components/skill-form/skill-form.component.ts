@@ -16,6 +16,7 @@ export class SkillFormComponent implements OnInit {
   checkoutForm = this.formBuilder.group({ nombre: '', percen: '' });
   actualUrl = window.location.href;
   sesion: boolean | undefined;
+  loading: boolean = true;
 
   constructor(
     private router: Router,
@@ -41,7 +42,7 @@ export class SkillFormComponent implements OnInit {
     );
     this.skillSvc
       .getSkillById(this.idSkill)
-      .subscribe((data) => (this.skill = data));
+      .subscribe((data) => {this.loading = false, (this.skill = data)});
   }
 
   addSkill() {
