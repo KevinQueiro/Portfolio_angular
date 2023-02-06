@@ -37,7 +37,7 @@ export class EduService {
     newEdu: EducacionesI
   ): Observable<EducacionesI> {
     return this.http.put<EducacionesI>(
-      environment.baseUrl + `educacion/change/${eduId}`,
+      environment.baseUrl + `/educacion/change/${eduId}`,
       newEdu
     );
   }
