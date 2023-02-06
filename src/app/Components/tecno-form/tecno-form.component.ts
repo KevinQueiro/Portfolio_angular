@@ -15,6 +15,7 @@ export class TecnoFormComponent implements OnInit {
   checkoutForm = this.formBuilder.group({ nombre: '', tipo: '' });
   actualUrl = window.location.href;
   sesion: boolean | undefined;
+  loading: boolean = true;
 
   constructor(
     private router: Router,
@@ -40,7 +41,7 @@ export class TecnoFormComponent implements OnInit {
     );
     this.tecnoSvc
       .getTecnoById(this.idTecno)
-      .subscribe((data) => (this.tecno = data));
+      .subscribe((data) => {this.loading = false, (this.tecno = data)});
   }
 
   addTecno() {

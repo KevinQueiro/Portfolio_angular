@@ -6,6 +6,9 @@
             <h3>Agregar Tecno</h3>
           </div>
           <div *ngIf="actualUrl.includes('change')">
+            <div *ngIf="loading" class="d-flex justify-content-center mb-5">
+              <div class="spinner-border" role="status"></div>
+            </div>
             <h3>Modificar Tecno</h3>
           </div>
           <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
